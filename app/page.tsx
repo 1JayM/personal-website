@@ -1,69 +1,276 @@
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
+import ProjectCard from "@/components/ProjectCard";
+import CertificationCard from "@/components/CertificationCard";
+import { projects } from "@/data/projects";
+import { certifications } from "@/data/certifications";
+
+const experiences = [
+  {
+    role: "Grader",
+    company: "Oakville STEM Learning",
+    period: "Jan 2024 – Jul 2025",
+    description:
+      "Reviewed student work, assessed assignments, and supported learning through consistent and constructive feedback.",
+    skills: ["Evaluation", "Communication", "Attention to detail"],
+  },
+  {
+    role: "Academic Peer Tutor",
+    company: "Garth Webb Secondary School",
+    period: "Feb 2025 – Jun 2025",
+    description:
+      "Helped fellow students understand course concepts, work through problems, and build confidence in their studies.",
+    skills: ["Tutoring", "Problem solving", "Collaboration"],
+  },
+  {
+    role: "Camp Coach",
+    company: "Oakville Soccer Club",
+    period: "Jul 2023",
+    description:
+      "Supported soccer camp activities for children aged 8–9, helping maintain a positive, organized, and engaging environment.",
+    skills: ["Leadership", "Teamwork", "Coaching"],
+  },
+];
 
 export default function Home() {
+  const featuredProjects = projects.filter((project) => project.featured);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+    <>
+      <Navbar />
+
+      <main>
+        <section className="hero section-container" id="home">
+          <Reveal className="hero-content">
+            <p className="hero-eyebrow">
+              <span className="status-dot" />
+              STUDENT · BUSINESS · TECHNOLOGY
+            </p>
+
+            <h1>
+              Interested in
+              <br />
+              Finance, Economics, and Tech
+              <br />
+            </h1>
+
+            <p className="hero-description">
+              Hey, I&apos;m Jay and I&apos;m an ambitious STEM student at the University of Toronto
+              Mississauga. I enjoy business, economics, and technology, and I&apos;m always looking
+              for opportunities to learn and grow.
+            </p>
+
+            <div className="hero-actions">
+              <a className="button button-primary" href="#projects">
+                Explore my work <span aria-hidden="true">↗</span>
+              </a>
+              <a className="button button-secondary" href="#contact">
+                Get in touch
+              </a>
+            </div>
+
+            <div className="hero-meta">
+              <span>Based in Oakville, Canada</span>
+              <span className="meta-separator">/</span>
+              <span>Open to opportunities</span>
+            </div>
+          </Reveal>
+
+          <Reveal className="hero-visual">
+            <div className="orbit orbit-one" />
+            <div className="orbit orbit-two" />
+
+            <div className="hero-photo">
+              <Image src="/profile.jpg" alt="Jay Mardikar" width={500} height={500} />
+            </div>
+          </Reveal>
+        </section>
+
+        <section className="section section-container" id="about">
+          <Reveal>
+            <SectionHeading
+              eyebrow="A LITTLE ABOUT ME"
+              title="Curiosity drives everything."
+              description="I enjoy learning how things work, solving problems, and finding ways to turn ideas into something practical."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          </Reveal>
+
+          <div className="about-grid">
+            <Reveal className="about-main">
+              <p>
+                I&apos;m a university student exploring the connection between business and
+                technology. I&apos;m interested in how data, software, and analytical thinking can
+                help people make better decisions.
+              </p>
+              <p>
+                Outside of coursework, I build personal projects, develop new technical skills, and
+                look for opportunities to learn from real-world challenges.
+              </p>
+            </Reveal>
+
+            <Reveal className="about-details">
+              <div className="detail-item">
+                <span className="detail-label">Currently studying</span>
+                <strong>University of Toronto Mississauga</strong>
+              </div>
+              <div className="detail-item">
+                <span className="detail-label">Areas of interest</span>
+                <strong>Finance, Economics, and Technology</strong>
+              </div>
+              <div className="detail-item">
+                <span className="detail-label">Outside the screen</span>
+                <strong>Fitness, Cricket, Badminton</strong>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal className="skills-panel">
+            <p className="skills-title">SKILLS I&apos;M DEVELOPING</p>
+            <div className="skill-pills">
+              {[
+                "Python",
+                "Java",
+                "JavaFX",
+                "React",
+                "TypeScript",
+                "Streamlit",
+                "Excel",
+                "Problem Solving",
+                "Communication",
+              ].map((skill) => (
+                <span className="skill-pill" key={skill}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+        </section>
+
+        <section className="section section-container" id="experience">
+          <Reveal>
+            <SectionHeading
+              eyebrow="EXPERIENCE"
+              title="Learning by doing."
+              description="Experiences that helped me build communication, leadership, and problem-solving skills."
+            />
+          </Reveal>
+
+          <div className="experience-list">
+            {experiences.map((experience, index) => (
+              <Reveal key={experience.company} className="experience-item">
+                <div className="experience-index">{String(index + 1).padStart(2, "0")}</div>
+
+                <div className="experience-main">
+                  <div className="experience-heading">
+                    <div>
+                      <h3>{experience.role}</h3>
+                      <p className="experience-company">{experience.company}</p>
+                    </div>
+                    <span className="experience-period">{experience.period}</span>
+                  </div>
+
+                  <p className="experience-description">{experience.description}</p>
+
+                  <div className="tag-list">
+                    {experience.skills.map((skill) => (
+                      <span className="tag" key={skill}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section className="section section-container" id="projects">
+          <Reveal>
+            <SectionHeading
+              eyebrow="SELECTED PROJECTS"
+              title="Ideas turned into projects."
+              description="A selection of things I've built while exploring software development and technology."
+            />
+          </Reveal>
+
+          <div className="projects-grid">
+            {featuredProjects.map((project) => (
+              <Reveal key={project.title}>
+                <ProjectCard project={project} />
+              </Reveal>
+            ))}
+          </div>
+
+          {projects.some((project) => !project.featured) && (
+            <div className="more-projects">
+              <p>More experiments and projects are in progress.</p>
+            </div>
+          )}
+        </section>
+
+        <section className="section section-container" id="certifications">
+          <Reveal>
+            <SectionHeading
+              eyebrow="CERTIFICATIONS"
+              title="Learning beyond the classroom."
+              description="Job simulations and learning experiences that help me explore professional skills."
+            />
+          </Reveal>
+
+          <div className="certifications-grid">
+            {certifications.map((certification) => (
+              <Reveal key={certification.name}>
+                <CertificationCard certification={certification} />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section className="section contact-section" id="contact">
+          <div className="section-container">
+            <Reveal className="contact-inner">
+              <p className="section-eyebrow">LET&apos;S CONNECT</p>
+              <p className="contact-description">
+                I&apos;m always open to connecting with people, exploring opportunities, and
+                discussing interesting ideas.
+              </p>
+
+              <div className="contact-actions">
+                <a className="button button-primary" href="mailto:jaydevmardikar@gmail.com">
+                  Send me an email <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  className="button button-secondary"
+                  href="https://www.linkedin.com/in/jay-mardikar-a0a054280/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  className="button button-secondary"
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Resume <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </Reveal>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer className="footer">
+        <div className="section-container footer-inner">
+          <a className="footer-logo" href="#home">
+            JM<span>.</span>
+          </a>
+          <p>© 2026 Jay Mardikar</p>
+        </div>
+      </footer>
+    </>
   );
 }
