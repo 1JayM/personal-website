@@ -49,12 +49,7 @@ export default function Home() {
               STUDENT · BUSINESS · TECHNOLOGY
             </p>
 
-            <h1>
-              Interested in
-              <br />
-              Finance, Economics, and Tech
-              <br />
-            </h1>
+            <h1>Jay Mardikar</h1>
 
             <p className="hero-description">
               Hey, I&apos;m Jay and I&apos;m an ambitious STEM student at the University of Toronto
@@ -91,8 +86,8 @@ export default function Home() {
         <section className="section section-container" id="about">
           <Reveal>
             <SectionHeading
-              eyebrow="A LITTLE ABOUT ME"
-              title="Curiosity drives everything."
+              eyebrow="ABOUT ME"
+              title="A summary of who I am."
               description="I enjoy learning how things work, solving problems, and finding ways to turn ideas into something practical."
             />
           </Reveal>
@@ -189,8 +184,8 @@ export default function Home() {
         <section className="section section-container" id="projects">
           <Reveal>
             <SectionHeading
-              eyebrow="SELECTED PROJECTS"
-              title="Ideas turned into projects."
+              eyebrow="PROJECTS"
+              title="My projects."
               description="A selection of things I've built while exploring software development and technology."
             />
           </Reveal>

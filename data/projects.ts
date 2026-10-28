@@ -26,8 +26,8 @@ export const projects: Project[] = [
     description:
       "A personal website showcasing my projects, experience, certifications, and interests in finance, economics, and technology.",
     technologies: ["React", "TypeScript", "CSS"],
-    github: "",
-    demo: "",
+    github: "https://github.com/1JayM/personal-website",
+    demo: "https://jaymardikar.vercel.app/",
     featured: true,
   },
   {
