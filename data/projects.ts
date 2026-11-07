@@ -31,14 +31,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: "Wordle",
-    category: "Game Development",
+    title: "Big 6 Canadian Comparative Dashboard",
+    category: "Web Development, Data Compilation and Analysis",
     description:
-      "A Wordle-inspired word game with randomized five-letter words, six guesses, and visual feedback for each attempt.",
-    technologies: ["Java", "JavaFX"],
-    github: "https://github.com/1JayM/Wordle",
+      "A dashboard for comparing and analyzing data from the Big 6 Canadian banks.",
+    technologies: ["React", "TypeScript", "CSS", "Data Analysis", "Visualization"],
+    github: "https://github.com/1JayM/big6-dashboard-canada",
     demo: "",
-    featured: false,
+    featured: true,
   },
   {
     title: "Expense Tracker",
